@@ -1,0 +1,8 @@
+[2023-08-14 21:03] {friend.name}: are you coming to Sintra on saturday??
+[2023-08-14 21:05] {player.name}: only if you don't make us climb to the palace again
+[2023-08-14 21:05] {friend.name}: no promises 😌
+[2023-08-14 21:06] {friend.name}: I'll bring the pastéis de nata. that's my peace offering
+[2023-08-14 21:07] {player.name}: deal
+[2023-08-19 23:41] {friend.name}: today was really nice. thank you for coming
+[2023-08-19 23:44] {player.name}: it was! your haircut though
+[2023-08-19 23:44] {friend.name}: rude. goodnight

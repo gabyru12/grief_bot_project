@@ -1,0 +1,52 @@
+# "When X happens, if Y is true, do Z."
+# Placeholder story text — the story team will replace it.
+
+- id: chapter_start
+  when: { event: chapter_started, chapter: chapter_2 }
+  do:
+    - wait: 1
+    - open_file: Desktop/Note_from_parents.txt
+    - wait: 5
+    - notify: { from: friend, text: "Hey {player.name}… it's me. Well, sort of. Click to talk.", chat: greeting }
+
+- id: idle_hint
+  when: { event: idle }
+  if: { not_flag: will_read }
+  do:
+    - notify: { from: otto, text: "Looking for something? OTTO can help you search.", chat: hint_offer }
+
+- id: diary_opened
+  when: { event: file_opened, file: Documents/Personal/diary_2024.txt }
+  once: true
+  do:
+    - set_flag: diary_read
+    - wait: 2
+    - notify: { from: otto, text: "OTTO is learning from {friend.name}'s diary to make your conversations feel more real." }
+
+- id: will_found
+  when: { event: file_opened, file: Documents/Papéis/Digital_Will_Consent.pdf }
+  once: true
+  do:
+    - set_flag: will_read
+    - wait: 3
+    - notify: { from: friend, text: "You found it, didn't you?", chat: will_found }
+
+- id: will_carried_out
+  when: { event: decision_made, decision: WILL, option: WILL_carry_out }
+  once: true
+  do:
+    - carry_out_will
+    - wait: 2
+    - notify: { from: otto, text: "Some of {friend.name}'s data is no longer available.", chat: otto_after_will }
+
+- id: offer_finish
+  when: { event: window_closed, file: Documents/Papéis/Digital_Will_Consent.pdf }
+  if: { flag: will_read }
+  do:
+    - wait: 1
+    - ask_decision: FINISH
+
+- id: finish
+  when: { event: decision_made, decision: FINISH, option: FINISH_end }
+  do:
+    - end_chapter

@@ -1,0 +1,10 @@
+Dear {player.name},
+
+Thank you for doing this. We know it isn't easy.
+
+{friend.name} always said there was a "digital will" somewhere on this laptop: a document saying what should happen to {friend.their} files. We never found it. You knew {friend.them} better than anyone, and you're good with computers.
+
+Take your time. Whatever the will says, we'll do it.
+
+With love,
+{friend.name}'s mum and dad

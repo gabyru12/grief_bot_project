@@ -1,0 +1,4 @@
+files:
+  Digital_Will_Consent.pdf:
+    will: true            # shows the "Carry out the will" button
+    category: none        # the will itself is never deleted

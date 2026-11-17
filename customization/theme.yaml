@@ -1,0 +1,24 @@
+# Look and branding. Change names, colours and pictures here; no code needed.
+# Paths are relative to this customization/ folder.
+
+os_name: "Lumen 2000"        # the fictional operating system of the friend's laptop
+otto_name: "OTTO"
+otto_logo: logo-otto.svg
+
+colors:
+  desktop_top: "#3f6f73"
+  desktop_bottom: "#7aa39a"
+  titlebar_from: "#2f4f6b"
+  titlebar_to: "#5f86a8"
+  window_face: "#d6d2c4"
+  otto_accent: "#6b5cff"
+
+icons:
+  folder: icons/folder.svg
+  text: icons/text.svg
+  document: icons/document.svg
+  image: icons/image.svg
+  audio: icons/audio.svg
+  video: icons/video.svg
+  unsupported: icons/unsupported.svg
+  computer: icons/computer.svg

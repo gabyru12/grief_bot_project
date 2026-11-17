@@ -1,0 +1,4 @@
+files:
+  chat_export_2023.txt:
+    category: chats
+    evidence: memory_claim   # used in a later chapter (theme C: verifying OTTO's memory)

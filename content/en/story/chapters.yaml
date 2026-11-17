@@ -1,0 +1,8 @@
+# Chapters, in order. The prototype contains only the chapter where the player searches for the will.
+
+- id: chapter_2
+  title: "The friend"
+  # Prototype: OTTO is already installed, with these permissions already granted (theme B).
+  start:
+    otto_installed: true
+    granted: [photos, chats, diary]

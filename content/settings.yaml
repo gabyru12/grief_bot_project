@@ -1,0 +1,19 @@
+# Game settings shared by all languages.
+
+# Kinds of data on the friend's laptop. OTTO asks permission per category (theme B),
+# and "Carry out the will" deletes every category except the ones in will_keeps.
+categories: [photos, chats, voice, diary, documents, video]
+
+# What the will allows to keep.
+will_keeps: [photos]
+
+# OTTO's resemblance level = how many granted categories still exist on the laptop.
+#   fewer than "medium"   → low
+#   "medium" up to "high" → medium
+#   "high" or more        → high
+resemblance:
+  medium: 2
+  high: 4
+
+# Seconds without any click or key press before the "idle" event fires.
+idle_seconds: 45

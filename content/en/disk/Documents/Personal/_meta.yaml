@@ -1,0 +1,4 @@
+files:
+  diary_2024.txt:
+    category: diary
+    memory: true          # opens with the faded "memory" style

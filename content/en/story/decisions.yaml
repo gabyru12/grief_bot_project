@@ -1,0 +1,23 @@
+# Decision windows. Every option is a real choice: buttons are never disabled or moved.
+# "consequence" is shown after the player chooses (optional).
+# Placeholder story text — the story team will replace it.
+
+- id: WILL
+  title: "Carry out the will?"
+  text: "This permanently deletes everything on this laptop except the photos, as {friend.name} asked."
+  options:
+    - id: WILL_carry_out
+      label: "Delete everything except the photos"
+      consequence: "The chats, the diary and the other files are gone. The photos remain."
+    - id: WILL_cancel
+      label: "Not now"
+      consequence: "Nothing was deleted."
+
+- id: FINISH
+  title: "Leave the laptop for now?"
+  text: "You can end this chapter here, or keep looking around."
+  options:
+    - id: FINISH_end
+      label: "End the chapter"
+    - id: FINISH_stay
+      label: "Keep looking around"

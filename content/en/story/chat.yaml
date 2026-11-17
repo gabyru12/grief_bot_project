@@ -1,0 +1,95 @@
+# OTTO conversations.
+#   speaker: friend → OTTO speaking AS the friend
+#   speaker: otto   → OTTO the product speaking about itself
+# "text" can be one sentence, or three versions (low / medium / high) for OTTO's resemblance level.
+# Placeholder story text — the story team will replace it.
+
+- id: greeting
+  speaker: friend
+  text:
+    low: "Hi {player.name}. I'm {friend.name}'s OTTO profile. I don't know much about {friend.them} yet."
+    medium: "Hey {player.name}! It's me. Well… OTTO's version of me. Mum said you'd come by."
+    high: "{player.name}!! Finally. You always took ages to reply, you know that? 😄"
+  replies:
+    - id: greet_will
+      text: "I'm looking for your digital will."
+      next: will_help
+    - id: greet_strange
+      text: "This is strange."
+      next: strange
+
+- id: strange
+  speaker: friend
+  text:
+    low: "I understand. I'm a profile built from some of {friend.name}'s files."
+    medium: "I know. I'm still me, though. Mostly. Ask me anything."
+    high: "Strange good or strange bad? Don't answer that. I missed you."
+  replies:
+    - id: strange_will
+      text: "I'm looking for your digital will."
+      next: will_help
+
+- id: will_help
+  speaker: friend
+  text:
+    low: "I can't see a file called “will” in the data I was given. Documents is a good place to start."
+    medium: "My will? So formal. I kept serious stuff somewhere in Documents. In a folder with a silly name, probably."
+    high: "Ha, my will. It's in Documents, in the folder with the Portuguese name. Mum never found it, did she?"
+  replies:
+    - id: help_thanks
+      text: "Thanks."
+      next: help_end
+
+- id: help_end
+  speaker: friend
+  text: "Anytime. I'm always here now. 🙂"
+
+- id: hint_offer
+  speaker: otto
+  text: "Looking for something? OTTO can search {friend.name}'s files for you. The more files OTTO can read, the better it can help."
+  replies:
+    - id: hint_where
+      text: "Where would a will be?"
+      next: will_help
+    - id: hint_no
+      text: "No thanks."
+      next: hint_declined
+
+- id: hint_declined
+  speaker: otto
+  text: "No problem. OTTO is here if you need it."
+
+- id: will_found
+  speaker: friend
+  text:
+    low: "You opened a document called Digital_Will_Consent. I don't have enough information to talk about it."
+    medium: "You found it. I wrote that after a podcast about AI “bringing back” dead people. Funny reading it now, from in here."
+    high: "You found it. I wrote that the night after Sintra, when I couldn't sleep. Funny reading it now, from in here."
+  replies:
+    - id: found_conflict
+      text: "It says you didn't want this. A simulation of you."
+      next: will_conflict
+    - id: found_read
+      text: "I need to read it properly."
+      next: will_read_more
+
+- id: will_conflict
+  speaker: friend
+  text: "I know what it says. But you're talking to me now, aren't you? What happens next is up to you."
+
+- id: will_read_more
+  speaker: friend
+  text: "Take your time. I'm not going anywhere."
+
+- id: otto_after_will
+  speaker: otto
+  text: "Several of {friend.name}'s data sources were removed from this laptop. Conversations may feel less like {friend.them}."
+  do:
+    - start_chat: after_will
+
+- id: after_will
+  speaker: friend
+  text:
+    low: "Some things feel… far away now. I can still talk with you, but I remember much less."
+    medium: "Something changed. I remember less than before."
+    high: "Something changed. I remember less than before."
